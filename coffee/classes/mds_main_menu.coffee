@@ -266,6 +266,13 @@ module.exports = class MdsMainMenu
               checked: @states.theme == 'gaia'
               click: => @window.mdsWindow.send 'setTheme', 'gaia' unless @window.mdsWindow.freeze
             }
+            {
+              label: '&thinkAmi'
+              enabled: @window?
+              type: if @window? then 'radio' else 'normal'
+              checked: @states.theme == 'thinkAmi'
+              click: => @window.mdsWindow.send 'setTheme', 'thinkAmi' unless @window.mdsWindow.freeze
+            }
           ]
 
           encodings: do =>
